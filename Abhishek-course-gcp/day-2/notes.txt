@@ -1,0 +1,9 @@
+#TASK 1: CREATED PROEJCT: gcp-zero-to-hero
+
+#TASK 2 - CREATED BUGET IN CONSOLE 
+
+#Task 3: Enable APIs for Core Services
+
+gcloud auth login 
+
+gcloud services enable compute.googleapis.com storage.googleapis.com monitoring.googleapis.com logging.googleapis.com cloudresourcemanager.googleapis.com iamcredentials.googleapis.com
