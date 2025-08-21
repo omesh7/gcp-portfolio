@@ -79,6 +79,13 @@ resource "google_compute_firewall" "allow_http" {
 
 #gcloud compute instances get-serial-port-output "devops-vm-instance" --zone "asia-south1-c" --project "gcp-zero-to-hero-123456" --- to verfiy startup.sh run or to debug it
 
+output "vm_external_ip" {
+  value = google_compute_instance.devops_vm_instance.network_interface[0].access_config[0].nat_ip
+}
+
+#curl for testing it
+#curl http://$(terraform output -raw vm_external_ip)
+
 #SSH login 
 #gcloud compute ssh --zone "asia-south1-c" "devops-vm-instance" --project "gcp-zero-to-hero-WITH_ID"
 #eg:
