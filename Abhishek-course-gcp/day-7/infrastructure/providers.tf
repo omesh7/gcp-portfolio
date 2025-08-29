@@ -1,7 +1,7 @@
 terraform {
   backend "gcs" {
     bucket = "terraform-state-gcp-portfolio"
-    prefix = "abisekh/day-5/state"
+    prefix = "abisekh/day-6/state"
   }
 
   required_providers {
@@ -18,7 +18,7 @@ provider "google" {
   default_labels = {
     environment = "dev"
     terraform   = "true"
-    day         = "5"
+    day         = "7"
   }
 }
 

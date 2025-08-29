@@ -15,6 +15,10 @@ terraform {
 provider "google" {
   project = var.gcp_project_id
   region  = var.gcp_region
-
+  default_labels = {
+    environment = "dev"
+    terraform   = "true"
+    day         = "4"
+  }
 }
 

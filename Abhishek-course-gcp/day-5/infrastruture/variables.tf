@@ -8,7 +8,7 @@ variable "gcp_project_id" {
 variable "gcp_region" {
   description = "The region where resources will be created."
   type        = string
-  default     = "ap-south1"
+  default     = "asia-south1"
 }
 
 

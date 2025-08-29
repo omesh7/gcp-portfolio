@@ -40,7 +40,6 @@ resource "google_compute_instance_template" "web-template" {
 
 
 #task 3: Managed Instance Group Across 3 Zones
-
 resource "google_compute_region_instance_group_manager" "web-mig" {
   name               = "web-mig-day-7"
   description        = "Managed Instance Group for web servers across multiple zones"
@@ -80,7 +79,7 @@ resource "google_compute_region_autoscaler" "web_autoscaler" {
     cooldown_period = 60
 
     cpu_utilization {
-      target = 0.6
+      target = 0.6 #60 % usage
     }
   }
 }
@@ -154,8 +153,8 @@ resource "google_compute_url_map" "web_url_map" {
   # You can add path_matcher here for different URLs -> different backends
   # Example: /api/* -> api-backend, /images/* -> image-backend
 }
-#can we omit url_map? cause we have default thing:
-#nope: GCP needs to know where to send traffic
+#can we omit url_map? cause we have 'default' thing:
+#ans: nope: GCP needs to know where to send traffic
 
 #similar to (AWS ALB Rules) 
 
