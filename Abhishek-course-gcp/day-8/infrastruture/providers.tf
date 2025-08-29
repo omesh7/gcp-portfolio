@@ -9,6 +9,11 @@ terraform {
       source  = "hashicorp/google"
       version = "6.49.0"
     }
+    cloudflare = {
+      source  = "cloudflare/cloudflare"
+      version = "5.8.4"
+    }
+
   }
 }
 
@@ -22,7 +27,12 @@ provider "google" {
   }
 }
 
-resource "random_id" "suffix" {
-  byte_length = 4
+
+provider "cloudflare" {
+  api_token = var.cloudflare_api_token
+}
+
+data "cloudflare_zone" "zone" {
+  zone_id = var.cloudflare_zone_id
 }
 
