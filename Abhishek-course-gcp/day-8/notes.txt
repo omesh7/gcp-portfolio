@@ -1,0 +1,2 @@
+to create ssh key:
+ssh-keygen -t rsa -b 4096 -f ssh-key -N ""

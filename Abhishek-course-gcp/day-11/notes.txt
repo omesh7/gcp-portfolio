@@ -1,0 +1,10 @@
+to create ssh key:
+ssh-keygen -t rsa -b 4096 -f ssh-key -N ""
+
+#to lgin with created ssh
+ssh -i ssh-key gcp-user@<EXTERNAL_IP>
+
+
+
+if startup scrip fails for any rteason debug with this:
+journalctl -u google-startup-scripts.service
